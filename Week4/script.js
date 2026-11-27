@@ -71,3 +71,23 @@ createForm.addEventListener("submit", (event) => {
   createForm.reset();
   openLogin();
 });
+
+// Dark mode toggle
+const root = document.documentElement;
+const toggle = document.querySelector("#themeToggle");
+
+const setTheme = (name) => {
+  const dark = name === "dark";
+  root.dataset.theme = name;
+  toggle.textContent = dark ? "Light" : "Dark";
+  localStorage.setItem("theme", name);
+};
+
+const systemDark = matchMedia("(prefers-color-scheme: dark)").matches;
+const saved = localStorage.getItem("theme");
+setTheme(saved ?? (systemDark ? "dark" : "light"));
+
+toggle.onclick = () => {
+  const dark = root.dataset.theme === "dark";
+  setTheme(dark ? "light" : "dark");
+};

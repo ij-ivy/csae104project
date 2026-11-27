@@ -9,6 +9,16 @@
   --radius: 8px;
 }
 
+[data-theme="dark"] {
+  --brand: #3b82f6;
+  --brand-dark: #2563eb;
+  --brand-soft: #1e3a5f;
+  --surface: #1e293b;
+  --page: #0f172a;
+  --text: #f1f5f9;
+  --border: #334155;
+}
+
 *,
 *::before,
 *::after {
